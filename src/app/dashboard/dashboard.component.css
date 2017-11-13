@@ -1,0 +1,15 @@
+#standardRoom {
+  background-color: black;
+  height: 200px;
+  color: white;
+  font-size: 24px;
+  line-height: 200px;
+}
+
+#goldRoom {
+  background-color: pink;
+  height: 200px;
+  color: white;
+  font-size: 24px;
+  line-height: 200px;
+}
