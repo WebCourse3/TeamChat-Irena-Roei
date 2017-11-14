@@ -1,7 +1,7 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { AppComponent }         from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -12,6 +12,8 @@ import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
 import { AlertModule } from 'ngx-bootstrap';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { StandartRoomComponent } from './standart-room/standart-room.component';
+import { SingServiceService } from './sing-service.service';
 
 const appRoutes:Routes = [
   {
@@ -35,7 +37,9 @@ const appRoutes:Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -43,9 +47,10 @@ const appRoutes:Routes = [
     LoginFormComponent,
     FooterComponent,
     DashboardComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    StandartRoomComponent
   ],
-  providers: [UserService, AuthguardGuard],
+  providers: [UserService, AuthguardGuard,SingServiceService,HttpClient],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

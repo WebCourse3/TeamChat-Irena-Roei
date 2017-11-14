@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { USERS } from '../users';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,7 @@ import { UserService } from '../user.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private user: UserService) { }
-
+  hasPermission = null;
   ngOnInit() {
   }
 

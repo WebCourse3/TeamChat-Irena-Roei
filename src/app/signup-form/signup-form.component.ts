@@ -35,7 +35,7 @@ export class SignupFormComponent implements OnInit {
     }
 
     if (authenticatedUsername == null && authenticatedPassword) {
-      var newUser = {username: usernameForm, password: passwordForm, permission: 'standard'}
+      var newUser = {username: usernameForm, password: passwordForm}
       USERS.push(newUser);
       this.formResults = "User is created. Go to login page.";
       this.isValid = true;

@@ -5,22 +5,22 @@
         <h3 class="panel-title">Login</h3>
       </div>
       <div class="panel-body">
-        <form class="form-horizontal" (submit)="loginUser($event)">
+        <form class="form-horizontal" >
           <div class="form-group">
             <label for="inputUsername" class="col-sm-2 control-label">Username</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputUsername" placeholder="Enter your username">
+              <input [(ngModel)]="loginUser2.username"  [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="inputUsername" placeholder="Enter your username">
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Enter your Password">
+              <input [(ngModel)]="loginUser2.password"  [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="inputPassword" placeholder="Enter your Password">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" value="login" class="btn btn-default">Sign in</button>
+              <button type="submit" value="login" class="btn btn-default" (click)="submit()">Sign in</button>
             </div>
           </div>
         </form>
